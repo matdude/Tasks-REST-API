@@ -25,4 +25,7 @@ public class CreatedTrelloCardDto {
 
     @JsonProperty("badges")
     private List<BadgesDto> badges;
+
+    public CreatedTrelloCardDto(String s, String test_task, String s1) {
+    }
 }
