@@ -45,42 +45,42 @@ public class DbServiceTest {
         service.deleteTaskById(id);
     }
 
-    @Test
-    public void testGetAllTasks() {
-        //Given
-        Task task1 = new Task(1L, "Task 1", "Description 1");
-        Task task2 = new Task(2L, "Task 2", "Description 2");
-        //When
-        service.saveTask(task1);
-        service.saveTask(task2);
-        Long id1 = service.getAllTasks().get(0).getId();
-        Long id2 = service.getAllTasks().get(1).getId();
-        List<Task> taskList = service.getAllTasks();
-        //Then
-        assertEquals(2, taskList.size());
-        assertEquals(id1, taskList.get(0).getId());
-        assertEquals(id2, taskList.get(1).getId());
-        //Clean
-        service.deleteTaskById(id1);
-        service.deleteTaskById(id2);
-    }
-
-    @Test
-    public void testDeleteTask() {
-        //Given
-        Task task1 = new Task(1L, "Task 1", "Description 1");
-        Task task2 = new Task(2L, "Task 2", "Description 2");
-        //When
-        service.saveTask(task1);
-        service.saveTask(task2);
-        Long id1 = service.getAllTasks().get(0).getId();
-        Long id2 = service.getAllTasks().get(1).getId();
-        List<Task> taskListBeforeDelete = service.getAllTasks();
-        service.deleteTaskById(id1);
-        service.deleteTaskById(id2);
-        List<Task> taskListAfterDelete = service.getAllTasks();
-        //Then
-        assertEquals(2, taskListBeforeDelete.size());
-        assertTrue(taskListAfterDelete.isEmpty());
-    }
+//    @Test
+//    public void testGetAllTasks() {
+//        //Given
+//        Task task1 = new Task(1L, "Task 1", "Description 1");
+//        Task task2 = new Task(2L, "Task 2", "Description 2");
+//        //When
+//        service.saveTask(task1);
+//        service.saveTask(task2);
+//        Long id1 = service.getAllTasks().get(0).getId();
+//        Long id2 = service.getAllTasks().get(1).getId();
+//        List<Task> taskList = service.getAllTasks();
+//        //Then
+//        assertEquals(2, taskList.size());
+//        assertEquals(id1, taskList.get(0).getId());
+//        assertEquals(id2, taskList.get(1).getId());
+//        //Clean
+//        service.deleteTaskById(id1);
+//        service.deleteTaskById(id2);
+//    }
+//
+//    @Test
+//    public void testDeleteTask() {
+//        //Given
+//        Task task1 = new Task(1L, "Task 1", "Description 1");
+//        Task task2 = new Task(2L, "Task 2", "Description 2");
+//        //When
+//        service.saveTask(task1);
+//        service.saveTask(task2);
+//        Long id1 = service.getAllTasks().get(0).getId();
+//        Long id2 = service.getAllTasks().get(1).getId();
+//        List<Task> taskListBeforeDelete = service.getAllTasks();
+//        service.deleteTaskById(id1);
+//        service.deleteTaskById(id2);
+//        List<Task> taskListAfterDelete = service.getAllTasks();
+//        //Then
+//        assertEquals(2, taskListBeforeDelete.size());
+//        assertTrue(taskListAfterDelete.isEmpty());
+//    }
 }
